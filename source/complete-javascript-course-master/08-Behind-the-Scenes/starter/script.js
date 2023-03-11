@@ -157,3 +157,4 @@ const personCopy = Object.assign({}, ontherPerson);
 console.log(person);
 console.log(ontherPerson);
 console.log(personCopy);
+console.log(personCopy);
