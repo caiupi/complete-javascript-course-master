@@ -35,6 +35,12 @@ const restaurant = {
     console.log(this.categories[1]);
     console.log(`order receved ${this.mainMenu[mainIndex]}  w`);
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is the pasta ingrendients ${ing1}, ${ing2}, ${ing3}`);
+  },
+  orderPizza: function (mainIngredient, ...ontherIngrendients) {
+    console.log(mainIngredient, ontherIngrendients);
+  },
 };
 
 restaurant.orderDelivery({
@@ -49,7 +55,65 @@ restaurant.orderDelivery({
   adress: 'Via del sole 21',
 });
 console.log('---------');
+const arr = [7, 8, 9];
+const badNewArr = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+const goodNewArr = [1, 2, ...arr];
+console.log(goodNewArr);
+console.log(...goodNewArr);
+const newMenu = [...restaurant.mainMenu, 'Gnochi'];
+console.log(newMenu);
 
+const mainMenuCopy = [...restaurant.mainMenu];
+
+const menu = [...restaurant.mainMenu, ...newMenu];
+console.log(menu);
+//interable are Arrays Strings maps, sets but not objects
+const str = 'Jonas';
+const letters = [...str];
+console.log(letters);
+//const ingrendients = [
+//prompt("Let's make pasta! Ingrendiets 1"),
+//prompt("Let's make pasta! Ingrendiets 2"),
+//prompt("Let's make pasta! Ingrendiets 2"),
+//];
+//console.log(ingrendients);
+//restaurant.orderPasta(...ingrendients);
+
+const newRestorant = { ...restaurant, founder: 'Giuseppe' };
+console.log(newRestorant);
+const restorantCopy = { ...restaurant };
+restorantCopy.name = 'Ristorante Roma';
+console.log(restorantCopy);
+
+const arr2 = [1, 2, ...[3, 4, 5]];
+const [a, b, ...onthers] = [1, 2, 3, 4, 5];
+console.log(arr2);
+console.log(a, b, onthers);
+
+const [pizza, , risotto, ...ontherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, ontherFood);
+const { sat, ...weekDays } = restaurant.openingHours;
+console.log(weekDays);
+const add = function (...numbers) {
+  console.log(...numbers);
+  let sum = 0;
+  for (let index = 0; index < numbers.length; index++) {
+    sum += numbers[index];
+  }
+  console.log(`The sum is ${sum}`);
+};
+
+add(2, 3);
+add(4, 5, 6);
+const x = [23, 4, 7];
+add(...x);
+newRestorant.orderPizza('Tomato', 'Spinac', 'Mozarella');
+restaurant.orderPizza('mushrums');
+/*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
 const {
@@ -73,7 +137,7 @@ const {
 //console.log(fri);
 console.log(o, c);
 
-/*
+
 const arr = [2, 3, 4];
 const a = arr[0];
 const b = arr[1];
