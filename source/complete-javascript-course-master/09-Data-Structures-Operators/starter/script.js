@@ -113,6 +113,12 @@ const x = [23, 4, 7];
 add(...x);
 newRestorant.orderPizza('Tomato', 'Spinac', 'Mozarella');
 restaurant.orderPizza('mushrums');
+console.log('OR');
+console.log(3 || 'Jonas');
+console.log(null || NaN);
+console.log('AND');
+console.log(3 && 'Jonas');
+
 /*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
