@@ -254,19 +254,22 @@ console.log(users[0]?.name ?? 'user name empty');
 const propreties = Object.keys(openingHours);
 console.log(propreties);
 let openStr = `we are open on ${propreties.length} days `;
+
 for (const day of Object.keys(openingHours)) {
   openStr += `${day} `;
 }
+
 console.log(openStr);
 const values = Object.values(openingHours);
 console.log(values);
 const entries = Object.entries(openingHours);
 console.log(entries);
+console.log('.......');
+
 for (const [key, { open, close }] of entries) {
   console.log(`On ${key} we open at ${open} and close ${close}`);
 }
 // Coding Challenge #2
-
 /* 
 Let's continue with our football betting app!
 
@@ -336,6 +339,30 @@ const game = {
 };
 console.log('------Challanger');
 
+for (let goalNumber = 0; goalNumber < game.scored.length; goalNumber++) {
+  console.log(`Gual ${goalNumber}: ${game.scored[goalNumber]}`);
+}
+
+/*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 for (const [index, player] of Object.entries(game.scored)) {
   console.log(`Goal ${index} was make from ${player}`);
 }
@@ -345,6 +372,7 @@ const scores = function (data) {
   }
 };
 console.log(scores(game.scored));
+*/
 /*
 const { name, openingHours, categories } = restaurant;
 console.log(name, openingHours, categories);
@@ -393,3 +421,50 @@ console.log(i, j, k);
 const [p = 1, q = 1, r = 1] = [8, 9];
 console.log(p, q, r);
 */
+console.log('----------------------End Challanger');
+const orderSet = new Set([
+  'Pasta',
+  'Pizza',
+  'Pizza',
+  'Risotto',
+  'Pasta',
+  'Pizza',
+]);
+console.log(orderSet);
+console.log(new Set('Jonas'));
+console.log(orderSet.size);
+console.log(orderSet.has('Pizza'));
+console.log(orderSet.has('Bread'));
+orderSet.add('Garlic Bread');
+orderSet.add('Garlic Bread');
+console.log(orderSet.delete('Pizza'));
+console.log(orderSet);
+for (const order of orderSet) console.log(order);
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+console.log(new Set('jonasschmedtmann').size);
+//Maps
+const rest = new Map();
+rest.set('name', 'Classico Italiano');
+
+rest.set(1, 'Firenze , Italia');
+rest.set(2, 'Lisbone, Portugal');
+rest
+  .set('categories', ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'])
+  .set('open', 11)
+  .set('close', 23)
+  .set(true, 'We are open')
+  .set(false, 'We are clouse');
+const time = 21;
+console.log(rest.get(time > rest.get('open') && time < rest.get('clouse')));
+console.log(rest.has('categories'));
+rest.delete(2);
+console.log(rest.size);
+//rest.clear();
+const arrMaps = [1, 2];
+console.log(rest.set(arrMaps, 'Test'));
+console.log(rest.get(arrMaps));
+rest.set(document.querySelector('h1', 'Heading'));
+
+console.log(rest);
